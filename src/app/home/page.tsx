@@ -1,23 +1,23 @@
-import { MarqueeDemoVertical } from "@/components/magicui/maqueevertical";
+import { AnimatedListDemo } from "@/components/anima";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <>
-      <main className="flex items-center justify-center min-h-screen ">
-        {/* Contêiner ocupando toda a altura */}
-        <div className="flex w-full min-h-screen">
-          {/* Lado direito com MarqueeDemo */}
-          <div className="w-1/2 flex items-center justify-center p-4">
-            <MarqueeDemoVertical />
-          </div>
+    <main className="grid grid-cols-2 min-h-screen">
+      {/* Contêiner da Imagem */}
+      <div className="relative w-full h-screen">
+        <Image 
+           src="/img.png" 
+           alt="Imagem" 
+           width={1000} 
+           height={1000} 
+           className="w-full h-full "
+        />
+      </div>
 
-           {/* Lado esquerdo (ocupa metade da tela) */}
-           <div className="w-1/2 flex items-center justify-center">
-            <h1 className="text-xl text-black">Conteúdo direito</h1>
-          </div>
-
-        </div>
-      </main>
-    </>
+      <div className="w-full h-full">
+        <AnimatedListDemo />
+      </div>
+    </main>
   );
 }
