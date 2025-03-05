@@ -3,22 +3,45 @@ import { Marquee } from "./marquee";
 
 const reviews = [
   {
-    name: "Back-End",
-    username: "@jack",
-    body: "O MERCADO DE TRBALHO ESTA EM ALTA E VAMOS FICAR RICOS ",
-    img: "https://avatar.vercel.sh/jack",
+    name: "Acelerando a Inovação",
+    body: "A tecnologia está transformando a maneira como trabalhamos, desde a automação de tarefas repetitivas até a criação de novos campos de atuação. Prepare-se para um futuro em que a inovação é a chave do sucesso.",
+    img: "AC.png",
+    username: "",
   },
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
+    name: "Transformação Digital",
+    body: "Com o avanço das ferramentas digitais, profissões estão se adaptando e novas carreiras estão surgindo. As tecnologias emergentes estão redefinindo o que significa ser um profissional no século XXI.",
+    img: "TD.png",
+    username: "",
+
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
+    name: "A Revolução da Inteligência Artificial",
+    body: "A inteligência artificial está moldando o futuro do trabalho, criando oportunidades em áreas como automação, saúde, e segurança cibernética, enquanto desafia as habilidades tradicionais.",
+    img: "IA.png",
+    username: "",
+
+  },
+  {
+    name: "Convergência de Disciplinas",
+    body:"A tecnologia está unindo diferentes campos, como biotecnologia, inteligência artificial e sustentabilidade, abrindo portas para profissões híbridas que antes pareciam impossíveis.",
+    img: "CV.png",
+    username: "",
+
+  },
+  {
+    name: "Trabalho Remoto e Flexibilidade",
+    body: "A digitalização dos ambientes de trabalho está mudando a forma como interagimos com o mercado de trabalho, permitindo mais flexibilidade e novas formas de colaboração, onde quer que você esteja.",
+    img: "TR.png",
+    username: "",
+
+  },
+  {
+    name: "Tecnologia e Sustentabilidade",
+    body:  "Tecnologias inovadoras estão ajudando a criar um futuro mais sustentável, com novas oportunidades em áreas como energias renováveis, economia circular e gestão ambiental. O futuro do trabalho será tão verde quanto tecnológico.",
+    img: "TS.png",
+    username: "",
+
   },
 ];
 
@@ -39,7 +62,7 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative h-full w-full  cursor-pointer overflow-hidden rounded-xl border p-4",
+        "relative w-full  cursor-pointer overflow-hidden rounded-xl border p-4",
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
@@ -47,28 +70,27 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row  items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <img className="rounded-full" width="60" height="50" alt="" src={img} />
         <div className="flex  flex-col">
-          <figcaption className="text-sm  font-medium dark:text-white">
+          <figcaption className="text-base  font-bold dark:text-white">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="mt-2  text-lg">{body}</blockquote>
     </figure>
   );
 };
 
 export function MarqueeDemoVertical() {
   return (
-    <div className="relative flex h-full w-full flex-row items-center justify-center overflow-hidden">
-      <Marquee pauseOnHover vertical className="[--duration:20s]">
+    <div className="relative flex w-full flex-row items-center justify-center overflow-hidden">
+      <Marquee pauseOnHover vertical className="[--duration:5s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover vertical className="[--duration:20s]">
+      <Marquee reverse pauseOnHover vertical className="[--duration:5s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
