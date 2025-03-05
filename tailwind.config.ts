@@ -20,7 +20,7 @@ export default {
   				DEFAULT: 'hsl(var(--secondary))',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
-				header: "#141518",
+  			header: '#141518',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
@@ -61,7 +61,8 @@ export default {
   			'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
   			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
   			marquee: 'marquee var(--duration) infinite linear',
-  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			grid: 'grid 15s linear infinite'
   		},
   		keyframes: {
   			'shimmer-slide': {
@@ -97,6 +98,14 @@ export default {
   				},
   				to: {
   					transform: 'translateY(calc(-100% - var(--gap)))'
+  				}
+  			},
+  			grid: {
+  				'0%': {
+  					transform: 'translateY(-50%)'
+  				},
+  				'100%': {
+  					transform: 'translateY(0)'
   				}
   			}
   		}
