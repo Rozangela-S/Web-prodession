@@ -7,7 +7,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center justify-between gap-6 text-sm">
           <Link href="/" >Home</Link>
           <Link href="/profissoes">Profissões</Link>
-          <Link href="tendencias">Tendências</Link>
+          <Link href="/tendencias">Tendências</Link>
         </nav>
       </div>
     </header>
