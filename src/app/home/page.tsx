@@ -16,7 +16,7 @@ export default function HomePage() {
       </div>
       <div className="flex flex-col">
         <h2>
-        "A tecnologia é um mecanismo de liberação de recursos. Ela pode tornar abundante o que antes era escasso."
+        A tecnologia é um mecanismo de liberação de recursos. Ela pode tornar abundante o que antes era escasso.
         </h2>
         <p className="text-right text-gray-800">
         Peter Diamandis.

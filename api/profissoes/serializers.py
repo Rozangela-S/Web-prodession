@@ -15,3 +15,12 @@ class ProfissaoSerializer(serializers.ModelSerializer):
         if "rating" in value and not isinstance(value["rating"], float):
             raise serializers.ValidationError("'rating' deve ser um número.")
         return value
+    
+
+
+    def to_representation(self, instance):
+        """Converte 'salary-min' e 'salary-max' para 'salary_min' e 'salary_max'"""
+        data = super().to_representation(instance)
+        data["salary_min"] = data.pop("salary-min", None)
+        data["salary_max"] = data.pop("salary-max", None)
+        return data
