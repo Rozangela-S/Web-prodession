@@ -17,6 +17,9 @@ const futureTrendsData = [
   { year: "2025", IA: 120, Cybersecurity: 110, Cloud: 130, Blockchain: 65, IoT: 100, VR: 70 },
   { year: "2026", IA: 150, Cybersecurity: 130, Cloud: 160, Blockchain: 80, IoT: 120, VR: 90 },
   { year: "2027", IA: 180, Cybersecurity: 150, Cloud: 190, Blockchain: 100, IoT: 140, VR: 110 },
+  { year: "2028", IA: 210, Cybersecurity: 170, Cloud: 220, Blockchain: 120, IoT: 160, VR: 130 },
+  { year: "2029", IA: 250, Cybersecurity: 190, Cloud: 260, Blockchain: 140, IoT: 180, VR: 150 },
+  { year: "2030", IA: 300, Cybersecurity: 210, Cloud: 310, Blockchain: 160, IoT: 200, VR: 170 },
 ];
 
 const marketShareData = [
@@ -28,7 +31,7 @@ const marketShareData = [
   { name: "VR/AR", value: 5 },
 ];
 
-const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff8042", "#8a2be2", "#ff69b4"];
+const COLORS = ["#1f15db", "#29c264", "#eba925", "#d85b1d", "#6c0ac7", "#d61073"];
 
 export default function TendenciasGraficos() {
   return (
@@ -45,42 +48,41 @@ export default function TendenciasGraficos() {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="IA" fill="#8884d8" name="Inteligência Artificial" />
-            <Bar dataKey="Cybersecurity" fill="#82ca9d" name="Cibersegurança" />
-            <Bar dataKey="Cloud" fill="#ffc658" name="Computação em Nuvem" />
-            <Bar dataKey="Blockchain" fill="#ff8042" name="Blockchain" />
-            <Bar dataKey="IoT" fill="#8a2be2" name="Internet das Coisas" />
-            <Bar dataKey="VR" fill="#ff69b4" name="Realidade Virtual/Aumentada" />
+            <Bar dataKey="IA" fill="#1f15db" name="Inteligência Artificial" />
+            <Bar dataKey="Cybersecurity" fill="#29c264" name="Cibersegurança" />
+            <Bar dataKey="Cloud" fill="#eba925" name="Computação em Nuvem" />
+            <Bar dataKey="Blockchain" fill="#d85b1d" name="Blockchain" />
+            <Bar dataKey="IoT" fill="#6c0ac7" name="Internet das Coisas" />
+            <Bar dataKey="VR" fill="#d61073" name="Realidade Virtual/Aumentada" />
           </BarChart>
         </ResponsiveContainer>
       </div>
 
       {/* Gráfico de Linha */}
-      <div className="mb-8">
-        <h3 className="text-xl font-semibold mb-2 text-center">📈 Projeção de Demanda</h3>
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={futureTrendsData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="IA" stroke="#8884d8" name="Inteligência Artificial" />
-            <Line type="monotone" dataKey="Cybersecurity" stroke="#82ca9d" name="Cibersegurança" />
-            <Line type="monotone" dataKey="Cloud" stroke="#ffc658" name="Computação em Nuvem" />
-            <Line type="monotone" dataKey="Blockchain" stroke="#ff8042" name="Blockchain" />
-            <Line type="monotone" dataKey="IoT" stroke="#8a2be2" name="Internet das Coisas" />
-            <Line type="monotone" dataKey="VR" stroke="#ff69b4" name="Realidade Virtual/Aumentada" />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-
+          <div className="mb-8">
+          <h3 className="text-xl font-semibold mb-2 text-center">📈 Projeção de Demanda</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={futureTrendsData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="year" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="IA" stroke="#1f15db" name="Inteligência Artificial" />
+              <Line type="monotone" dataKey="Cybersecurity" stroke="#29c264" name="Cibersegurança" />
+              <Line type="monotone" dataKey="Cloud" stroke="#eba925" name="Computação em Nuvem" />
+              <Line type="monotone" dataKey="Blockchain" stroke="#ff8042" name="Blockchain" />
+              <Line type="monotone" dataKey="IoT" stroke="#6c0ac7" name="Internet das Coisas" />
+              <Line type="monotone" dataKey="VR" stroke="#d61073" name="Realidade Virtual/Aumentada" />
+            </LineChart>
+          </ResponsiveContainer>
+          </div>
       {/* Gráfico de Pizza */}
       <div className="mb-8">
         <h3 className="text-xl font-semibold mb-2 text-center">🌍 Participação de Mercado em 2024</h3>
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
-            <Pie data={marketShareData} cx="50%" cy="50%" label outerRadius={100} fill="#8884d8" dataKey="value">
+            <Pie data={marketShareData} cx="50%" cy="50%" label outerRadius={100} fill="#1f15db" dataKey="value">
               {marketShareData.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
@@ -101,15 +103,16 @@ export default function TendenciasGraficos() {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Area type="monotone" dataKey="IA" stroke="#8884d8" fill="#8884d8" name="Inteligência Artificial" />
-            <Area type="monotone" dataKey="Cybersecurity" stroke="#82ca9d" fill="#82ca9d" name="Cibersegurança" />
-            <Area type="monotone" dataKey="Cloud" stroke="#ffc658" fill="#ffc658" name="Computação em Nuvem" />
+            <Area type="monotone" dataKey="IA" stroke="#1f15db" fill="#1f15db" name="Inteligência Artificial" />
+            <Area type="monotone" dataKey="Cybersecurity" stroke="#29c264" fill="#29c264" name="Cibersegurança" />
+            <Area type="monotone" dataKey="Cloud" stroke="#eba925" fill="#eba925" name="Computação em Nuvem" />
             <Area type="monotone" dataKey="Blockchain" stroke="#ff8042" fill="#ff8042" name="Blockchain" />
-            <Area type="monotone" dataKey="IoT" stroke="#8a2be2" fill="#8a2be2" name="Internet das Coisas" />
-            <Area type="monotone" dataKey="VR" stroke="#ff69b4" fill="#ff69b4" name="Realidade Virtual/Aumentada" />
+            <Area type="monotone" dataKey="IoT" stroke="#6c0ac7" fill="#6c0ac7" name="Internet das Coisas" />
+            <Area type="monotone" dataKey="VR" stroke="#d61073" fill="#d61073" name="Realidade Virtual/Aumentada" />
           </AreaChart>
         </ResponsiveContainer>
       </div>
     </div>
   );
 }
+
