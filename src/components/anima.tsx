@@ -14,42 +14,58 @@ interface Item {
 
 let notifications = [
   {
-    name: "Trabalho Remoto e Flexibilidade",
-    description: "A digitalização dos ambientes de trabalho está mudando a forma como interagimos com o mercado de trabalho, permitindo mais flexibilidade e novas formas de colaboração, onde quer que você esteja.",
-
+    name: "Peter Diamandis",
+    description: "A tecnologia é um mecanismo de liberação de recursos. Ela pode tornar abundante o que antes era escasso.",
     time: "15m ago",
+    icon: "💬",
 
-    icon: "💸",
     color: "#00C9A7",
-    img: "TR.png",
 
   },
   {
-    name: "User signed up",
-    description: "Magic UI",
+    name: "B. F. Skinner",
+    description: "O verdadeiro problema não é se as máquinas pensam, mas se os humanos o fazem.",
+    time: "15m ago",
+    icon: "💬",
+    color: "#d80b4f",
+
+  },
+  {
+    name: "Edward Teller",
+    description: "A ciência de hoje é a tecnologia de amanhã.",
+    time: "15m ago",
+    icon: "💬",
+    color: "#0805a3",
+
+
+  },
+  {
+    name: "Acelerando a Inovação",
+    description: "A tecnologia está transformando a maneira como trabalhamos, desde a automação de tarefas repetitivas até a criação de novos campos de atuação. Prepare-se para um futuro em que a inovação é a chave do sucesso.",
+    time: "15m ago",
+    icon: "💬",
+    color: "#8b16da",
+
+  },
+  {
+    name: "A Revolução da Inteligência Artificial",
+    description: "A inteligência artificial está moldando o futuro do trabalho, criando oportunidades em áreas como automação, saúde, e segurança cibernética, enquanto desafia as habilidades tradicionais.",
     time: "10m ago",
-    icon: "👤",
+    icon: "💬",
     color: "#FFB800",
   },
   {
-    name: "New message",
-    description: "Magic UI",
+    name: "Tecnologia e Sustentabilidade",
+    description: "Tecnologias inovadoras estão ajudando a criar um futuro mais sustentável, com novas oportunidades em áreas como energias renováveis, economia circular e gestão ambiental. O futuro do trabalho será tão verde quanto tecnológico.",
     time: "5m ago",
     icon: "💬",
     color: "#FF3D71",
-  },
-  {
-    name: "New event",
-    description: "Magic UI",
-    time: "2m ago",
-    icon: "🗞️",
-    color: "#1E86FF",
   },
 ];
 
 notifications = Array.from({ length: 10 }, () => notifications).flat();
 
-const Notification = ({ name, description, icon, img, color, time }: Item) => {
+const Notification = ({ name, description, icon, color, time }: Item) => {
   return (
     <figure
       className={cn(
@@ -94,7 +110,7 @@ export function AnimatedListDemo({
   return (
     <div
       className={cn(
-        "relative flex h-[1200px] w-full flex-col overflow-hidden p-2",
+        "relative flex h-[500px] w-full flex-col overflow-hidden p-1",
         className,
       )}
     >
@@ -104,7 +120,7 @@ export function AnimatedListDemo({
         ))}
       </AnimatedList>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background"></div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background"></div>
     </div>
   );
 }
